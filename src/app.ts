@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-  res.send('Hello world')
+  res.status(200).json({ message: 'Hello world' })
 })
 
 app.get('/logger', (req, res) => {
@@ -35,7 +35,7 @@ app.get('/logger', (req, res) => {
 const appRouter = express.Router()
 
 appRouter.get('/', (req, res) => {
-  res.send('Api says "Hello world!"')
+  res.status(200).json({ message: 'Api says: "Hello world"' })
 })
 
 appRouter.use('/categories', categoryRouter)
